@@ -15,7 +15,6 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +32,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private DeptService deptService;
 
-    @PostConstruct
-    private void createUser(){
 
-
-    }
 
     /**
      * 根据用户名查询用户数据

@@ -40,6 +40,16 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">所在地区</label>
+
+            <div class="layui-input-inline">
+                <input class="layui-input select-tree" th:attr="data-url=@{/dev/code//getDistricts}, data-value=${user?.province}"
+                       type="text" name="dept"  placeholder="请选择所在地区" th:value="${user?.}">
+            </div>
+
+        </div>
+
+        <div class="layui-form-item">
             <label class="layui-form-label">电话号码</label>
             <div class="layui-input-inline">
                 <input class="layui-input" type="text" name="phone" placeholder="请输入电话号码" th:value="${user?.phone}">

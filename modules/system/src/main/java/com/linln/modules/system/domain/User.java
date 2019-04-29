@@ -59,7 +59,12 @@ public class User implements Serializable {
     private String remark;
     @Excel(value = "状态", dict = "DATA_STATUS")
     private Byte status = StatusEnum.OK.getCode();
-
+    //省
+    private String province;
+    //市
+    private String city;
+    //区
+    private String area;
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="dept_id")
     @JsonIgnore

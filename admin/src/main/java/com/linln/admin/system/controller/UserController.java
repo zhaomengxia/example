@@ -35,6 +35,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
@@ -149,6 +150,22 @@ public class UserController {
         userService.save(user);
         return ResultVoUtil.SAVE_SUCCESS;
     }
+//    @PostConstruct
+//    private ResultVo createUser(@Validated UserValid valid){
+//        User user= userService.getByName("adminuser");
+//        if (user==null){
+//            user=new User();
+//        }
+//        // 对密码进行加密
+//        String salt = ShiroUtil.getRandomSalt();
+//        String encrypt = ShiroUtil.encrypt("123456", salt);
+//        user.setUsername("adminuser");
+//        user.setPassword(encrypt);
+//        user.setSalt(salt);
+//        userService.save(user);
+//        return ResultVoUtil.SAVE_SUCCESS;
+//    }
+
 
     /**
      * 跳转到详细页面
