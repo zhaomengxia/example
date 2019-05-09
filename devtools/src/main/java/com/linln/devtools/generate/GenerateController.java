@@ -38,7 +38,7 @@ import java.util.Map;
  * @author 小笨笨
  * @date 2018/8/14
  */
-@RestController
+@Controller
 @RequestMapping("/dev/code")
 public class GenerateController {
 
@@ -49,10 +49,6 @@ public class GenerateController {
     @Resource
     private DistrictServiceImpl districtService;
 
-    @GetMapping("/getDistricts")
-    public List<District> getDistricts(){
-        return districtService.list();
-    }
 
     @GetMapping
     public String index(Model model){
@@ -62,6 +58,12 @@ public class GenerateController {
         model.addAttribute("fieldQuery", ToolUtil.enumToMap(FieldQuery.class));
         model.addAttribute("fieldVerify", ToolUtil.enumToMap(FieldVerify.class));
         return "/devtools/generate/index";
+    }
+
+
+    @GetMapping("/getDistricts")
+    public List<District> getDistricts(){
+        return districtService.list();
     }
 
     @ApiOperation(value = "根据条件生成二维码")

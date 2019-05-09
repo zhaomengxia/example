@@ -10,6 +10,7 @@ import com.linln.devtools.generate.utils.jAngel.parser.Expression;
 import com.linln.devtools.generate.utils.parser.JavaParseUtil;
 import com.linln.modules.system.repository.BaseRepository;
 
+import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.Set;
 
@@ -32,7 +33,7 @@ public class RepositoryTemplate {
     /**
      * 生成类字段
      */
-    private static Document genClazzBody(Generate generate) {
+    private static Document genClazzBody(Generate generate)  {
         // 构建数据-模板表达式
         Expression expression = new Expression();
         expression.label("entity", generate.getBasic().getTableEntity());

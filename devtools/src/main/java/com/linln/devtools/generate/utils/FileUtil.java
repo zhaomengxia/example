@@ -16,8 +16,11 @@ public class FileUtil {
      * 获取模板文件路径
      * @param clazz 类对象
      */
-    public static String templatePath(Class<?> clazz){
-        return clazz.getResource("").getPath() + clazz.getSimpleName() + ".tpl";
+    public static String templatePath(Class<?> clazz)  {
+        String classpath = clazz.getResource("").getPath().replaceFirst("/", "");
+        String docRoot = classpath.replaceAll("target/classes", "src/main/java");
+        String filePath=docRoot+ clazz.getSimpleName()+".tpl";
+        return filePath;
     }
 
     /**

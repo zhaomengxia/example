@@ -7,6 +7,7 @@ import com.linln.component.excel.annotation.Excel;
 import com.linln.component.excel.enums.ExcelType;
 import lombok.Getter;
 import lombok.Setter;
+import netscape.security.UserDialogHelper;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import org.springframework.data.annotation.CreatedDate;
@@ -31,7 +32,7 @@ import java.util.Set;
 @SQLDelete(sql = "update sys_user" + StatusUtil.sliceDelete)
 @Where(clause = StatusUtil.notDelete)
 @Excel("用户数据")
-public class User implements Serializable {
+public class User extends UserDialogHelper implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Excel(value = "用户ID", type = ExcelType.EXPORT)
