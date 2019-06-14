@@ -1,9 +1,12 @@
 package com.linln.modules.system.domain;
 
+import com.alibaba.excel.annotation.ExcelProperty;
+import com.alibaba.excel.metadata.BaseRowModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.linln.common.enums.StatusEnum;
 import com.linln.common.utils.StatusUtil;
 import com.linln.modules.system.domain.User;
+import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
@@ -32,17 +35,20 @@ import javax.persistence.Table;
  */
 @Data
 @Entity
-@Table(name="sys_test_twotwo")
+@Table(name="sys_test_two")
 @EntityListeners(AuditingEntityListener.class)
 @Where(clause = StatusUtil.notDelete)
-public class Two implements Serializable {
+@Builder
+public class Two  extends BaseRowModel implements Serializable {
     // 主键ID
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     // 标题
+    @ExcelProperty(value = "标题",index = 0)
     private String title;
     // 备注
+    @ExcelProperty(value = "备注",index = 1)
     private String remark;
     // 创建时间
     @CreatedDate
@@ -56,6 +62,7 @@ public class Two implements Serializable {
     @NotFound(action=NotFoundAction.IGNORE)
     @JoinColumn(name="create_by")
     @JsonIgnore
+//    @ExcelProperty(value = "创建者",index = 2)
     private User createBy;
     // 更新者
     @LastModifiedBy
@@ -63,6 +70,7 @@ public class Two implements Serializable {
     @NotFound(action=NotFoundAction.IGNORE)
     @JoinColumn(name="update_by")
     @JsonIgnore
+//    @ExcelProperty(value = "更新者",index = 3)
     private User updateBy;
     // 数据状态
     private Byte status = StatusEnum.OK.getCode();

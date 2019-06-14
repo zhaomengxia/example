@@ -19,6 +19,12 @@ spring:
     username: root
     password: root
 
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    password:
+
 ## jpa配置
   jpa:
     show-sql: true

@@ -17,7 +17,7 @@
         <module name="thymeleaf" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="actionLog" target="1.8" />
       <module name="admin" target="1.8" />
       <module name="common" target="1.8" />
