@@ -26,7 +26,7 @@ public class CreateThread implements Runnable{
         System.out.println("Running: "+threadName+"---");
         for (int j=4;j>0;j--){
             try {
-                System.out.println("Thread: "+threadName+","+j);
+                System.out.println("Thread: "+threadName+","+j+"  do something");
                 Thread.sleep(50);
             } catch (InterruptedException e) {
                 System.out.println("Thread: "+threadName+"interrupted");

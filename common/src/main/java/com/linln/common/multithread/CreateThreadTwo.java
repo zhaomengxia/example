@@ -26,7 +26,7 @@ public class CreateThreadTwo extends Thread {
         System.out.println("Running: "+threadName);
 
         for (int j=4;j>0;j--){
-            System.out.println("Thread: "+threadName +","+j );
+            System.out.println("Thread: "+threadName +","+j +" do something");
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
