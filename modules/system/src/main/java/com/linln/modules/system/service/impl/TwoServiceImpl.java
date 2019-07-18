@@ -24,6 +24,18 @@ public class TwoServiceImpl implements TwoService {
     @Autowired
     private TwoRepository twoRepository;
 
+    private  Integer s=1;
+    
+
+    public static void test(){
+        Integer s = 2;
+        System.out.println(s);
+    }
+
+    public static void main(String[] args){
+       test();
+    }
+    
     /**
      * 根据ID查询数据
      * @param id 主键ID
