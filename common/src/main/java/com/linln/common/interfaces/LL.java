@@ -9,6 +9,7 @@ public class LL {
 
     public static void main(String[] args){
 
+
         AA aa=new AA();
 
         BB bb=new BB();
@@ -17,7 +18,7 @@ public class LL {
 
         DD dd=new DD();
 
-        System.out.println(aa.get(aa)+"--"+aa.get(dd)+"--"+bb.get(bb)+"--"+bb.get(aa));
+        System.out.println(aa.get(aa)+"--"+aa.get(dd)+"--"+bb.get(bb)+"--"+bb.get(aa)+"---"+aa.getName());
 
 
     }

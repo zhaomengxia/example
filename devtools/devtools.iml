@@ -161,5 +161,8 @@
     <orderEntry type="library" name="Maven: com.github.virtuald:curvesapi:1.04" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib:3.1" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm:4.2" level="project" />
+    <orderEntry type="library" name="react-dom.development" level="application" />
+    <orderEntry type="library" name="react.development" level="application" />
+    <orderEntry type="library" name="babel" level="application" />
   </component>
 </module>
